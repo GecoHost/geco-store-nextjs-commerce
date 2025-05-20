@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/next";
 import Navbar from 'components/layout/navbar';
 import { Inter } from 'next/font/google';
 import { ReactNode, Suspense } from 'react';
@@ -21,12 +20,12 @@ export const metadata = {
   },
   ...(TWITTER_CREATOR &&
     TWITTER_SITE && {
-    twitter: {
-      card: 'summary_large_image',
-      creator: TWITTER_CREATOR,
-      site: TWITTER_SITE,
-    },
-  }),
+      twitter: {
+        card: 'summary_large_image',
+        creator: TWITTER_CREATOR,
+        site: TWITTER_SITE,
+      },
+    }),
 };
 
 const inter = Inter({
@@ -43,7 +42,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <Suspense>
           <main>{children}</main>
         </Suspense>
-        <Analytics />
       </body>
     </html>
   );
